@@ -21,19 +21,19 @@ export function SkillsSection() {
         "Google Cloud Platform (Cloud Run, IAM, Storage)",
         "AWS",
         "Docker & Containerized Deployments",
-        "SQL, Redis",
-        "Vector Databases (ChromaDB)",
+        "SQL, Redis, MongoDB",
+        "Vector Databases",
       ],
     },
     {
       title: "Additional Tools & Frameworks",
       skills: [
         "LangChain, LangGraph",
+        "Google ADK, A2A protocol",
         "Streamlit",
-        "React.js",
         "Go (learning)",
         "Git & GitHub",
-        "Web Scraping (BeautifulSoup)",
+        "Web Scraping (Selenium, Firecrawl)",
       ],
     },
   ]
