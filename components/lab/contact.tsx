@@ -65,25 +65,6 @@ export function Contact() {
             </a>
           </div>
         </Reveal>
-
-        <Reveal delay={220}>
-          <div className="mx-auto mt-14 max-w-sm">
-            <p className="mb-3 font-mono text-[0.68rem] font-bold uppercase tracking-[0.18em] text-ink/70">
-              ♪ song on my head rn
-            </p>
-            <div className="overflow-hidden border-[3px] border-ink shadow-[5px_5px_0_0_var(--ink)]">
-              <iframe
-                src="https://open.spotify.com/embed/track/6Ec5LeRzkisa5KJtwLfOoW?utm_source=generator&theme=0"
-                width="100%"
-                height="80"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                title="Song on my head right now"
-                className="block border-0"
-              />
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   )
