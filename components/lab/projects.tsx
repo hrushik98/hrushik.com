@@ -96,22 +96,12 @@ const projects: Project[] = [
   {
     name: "offline-telugu-asr-android",
     headline: "Fully offline Telugu speech-to-text on Android",
-    metric: "0 ★",
+    metric: "1 ★",
     metricLabel: "GitHub Stars",
     description:
       "On-device automatic speech recognition and speaker diarization engine running entirely via ONNX Runtime on Android. Optimizes AI4Bharat IndicConformer and 3D-Speaker CAM++ models for low-latency live streaming with zero network reliance.",
     tech: ["ONNX Runtime", "IndicConformer", "CAM++", "Android NDK", "C++"],
     href: "https://github.com/hrushik98/offline-telugu-asr-android",
-  },
-  {
-    name: "SpeakThought",
-    headline: "Voice-to-task agent & scheduler",
-    metric: "Local",
-    metricLabel: "Private Repo",
-    description:
-      "A real-time voice task assistant integrating the Google Realtime API to extract scheduled events and structured to-dos from spoken thoughts, backed by DSP voice visualization mapping that lowers perceived latency by 40%.",
-    tech: ["Next.js", "Web Audio API", "Google Realtime API", "DSP"],
-    href: "https://github.com/hrushik98/speakthought",
   },
 ]
 
