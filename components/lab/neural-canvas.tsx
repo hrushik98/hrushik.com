@@ -19,6 +19,9 @@ export function NeuralCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      return
+    }
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext("2d")
@@ -146,7 +149,7 @@ export function NeuralCanvas() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_75%_70%_at_50%_45%,black_35%,transparent_100%)]"
+      className="hidden md:block absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_75%_70%_at_50%_45%,black_35%,transparent_100%)]"
     />
   )
 }
