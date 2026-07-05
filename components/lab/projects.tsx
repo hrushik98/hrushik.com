@@ -14,56 +14,6 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: "Paper2PyTorch",
-    headline: "Research papers → executable PyTorch code",
-    metric: "9 ★",
-    metricLabel: "GitHub Stars",
-    description:
-      "An advanced multi-agent compiler framework built with Google ADK and Gemini 3 Pro that parses complex machine learning research papers and outputs fully executable PyTorch Jupyter notebooks via a 4-stage self-repair loop.",
-    tech: ["Google ADK", "Gemini Pro", "FastAPI", "React", "SSE"],
-    href: "https://github.com/hrushik98/Paper2PyTorch",
-  },
-  {
-    name: "offline-telugu-asr-android",
-    headline: "Fully offline Telugu speech-to-text on Android",
-    metric: "0 ★",
-    metricLabel: "GitHub Stars",
-    description:
-      "On-device automatic speech recognition and speaker diarization engine running entirely via ONNX Runtime on Android. Optimizes AI4Bharat IndicConformer and 3D-Speaker CAM++ models for low-latency live streaming with zero network reliance.",
-    tech: ["ONNX Runtime", "IndicConformer", "CAM++", "Android NDK", "C++"],
-    href: "https://github.com/hrushik98/offline-telugu-asr-android",
-  },
-  {
-    name: "Whisper Mobile",
-    headline: "ASR speech engine with zero cloud dependency",
-    metric: "1 ★",
-    metricLabel: "GitHub Stars",
-    description:
-      "Fully offline Telugu/English ASR system for Android devices. Utilizes a custom JNI bridge running whisper.cpp C++ inference directly optimized for ARM64 NEON registers to transcribe 30s audio clips in under 4 seconds.",
-    tech: ["Android NDK", "whisper.cpp", "JNI", "Kotlin", "NEON"],
-    href: "https://github.com/hrushik98/whisper-mobile",
-  },
-  {
-    name: "SpeakThought",
-    headline: "Voice-to-task agent & scheduler",
-    metric: "Local",
-    metricLabel: "Private Repo",
-    description:
-      "A real-time voice task assistant integrating the Google Realtime API to extract scheduled events and structured to-dos from spoken thoughts, backed by DSP voice visualization mapping that lowers perceived latency by 40%.",
-    tech: ["Next.js", "Web Audio API", "Google Realtime API", "DSP"],
-    href: "https://github.com/hrushik98/speakthought",
-  },
-  {
-    name: "Rocky LM",
-    headline: "Fine-tuning Gemma-2 to speak like Rocky",
-    metric: "3 ★",
-    metricLabel: "GitHub Stars",
-    description:
-      "End-to-end LLM fine-tuning pipeline using LoRA to train google/gemma-2-2b-it on custom fiction dialogue datasets, successfully recreating the unique vocabulary and speech patterns of Rocky from Project Hail Mary.",
-    tech: ["Gemma 2", "LoRA", "Fine-tuning", "Python", "Transformers"],
-    href: "https://github.com/hrushik98/rocky-lm",
-  },
-  {
     name: "md2pdfgo",
     headline: "Full-stack Markdown to print-ready PDF",
     metric: "20 ★",
@@ -94,6 +44,16 @@ const projects: Project[] = [
     href: "https://github.com/hrushik98/bettrWrite",
   },
   {
+    name: "Paper2PyTorch",
+    headline: "Research papers → executable PyTorch code",
+    metric: "9 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "An advanced multi-agent compiler framework built with Google ADK and Gemini 3 Pro that parses complex machine learning research papers and outputs fully executable PyTorch Jupyter notebooks via a 4-stage self-repair loop.",
+    tech: ["Google ADK", "Gemini Pro", "FastAPI", "React", "SSE"],
+    href: "https://github.com/hrushik98/Paper2PyTorch",
+  },
+  {
     name: "Arxiv-researcher",
     headline: "Chat with Arxiv research papers",
     metric: "5 ★",
@@ -112,6 +72,46 @@ const projects: Project[] = [
       "AI-driven investment helper that extracts market metrics, reads stock profiles, and delivers detailed performance summarizations of equities using financial APIs.",
     tech: ["Python", "Yahoo Finance API", "LLM API", "Data Extract"],
     href: "https://github.com/hrushik98/FIN-AI",
+  },
+  {
+    name: "Rocky LM",
+    headline: "Fine-tuning Gemma-2 to speak like Rocky",
+    metric: "3 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "End-to-end LLM fine-tuning pipeline using LoRA to train google/gemma-2-2b-it on custom fiction dialogue datasets, successfully recreating the unique vocabulary and speech patterns of Rocky from Project Hail Mary.",
+    tech: ["Gemma 2", "LoRA", "Fine-tuning", "Python", "Transformers"],
+    href: "https://github.com/hrushik98/rocky-lm",
+  },
+  {
+    name: "Whisper Mobile",
+    headline: "ASR speech engine with zero cloud dependency",
+    metric: "1 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "Fully offline Telugu/English ASR system for Android devices. Utilizes a custom JNI bridge running whisper.cpp C++ inference directly optimized for ARM64 NEON registers to transcribe 30s audio clips in under 4 seconds.",
+    tech: ["Android NDK", "whisper.cpp", "JNI", "Kotlin", "NEON"],
+    href: "https://github.com/hrushik98/whisper-mobile",
+  },
+  {
+    name: "offline-telugu-asr-android",
+    headline: "Fully offline Telugu speech-to-text on Android",
+    metric: "0 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "On-device automatic speech recognition and speaker diarization engine running entirely via ONNX Runtime on Android. Optimizes AI4Bharat IndicConformer and 3D-Speaker CAM++ models for low-latency live streaming with zero network reliance.",
+    tech: ["ONNX Runtime", "IndicConformer", "CAM++", "Android NDK", "C++"],
+    href: "https://github.com/hrushik98/offline-telugu-asr-android",
+  },
+  {
+    name: "SpeakThought",
+    headline: "Voice-to-task agent & scheduler",
+    metric: "Local",
+    metricLabel: "Private Repo",
+    description:
+      "A real-time voice task assistant integrating the Google Realtime API to extract scheduled events and structured to-dos from spoken thoughts, backed by DSP voice visualization mapping that lowers perceived latency by 40%.",
+    tech: ["Next.js", "Web Audio API", "Google Realtime API", "DSP"],
+    href: "https://github.com/hrushik98/speakthought",
   },
 ]
 
