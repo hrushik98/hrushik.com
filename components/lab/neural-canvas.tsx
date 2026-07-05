@@ -24,7 +24,7 @@ export function NeuralCanvas() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.matchMedia("(max-width: 768px)").matches
     let nodes: Node[] = []
     let width = 0
     let height = 0
