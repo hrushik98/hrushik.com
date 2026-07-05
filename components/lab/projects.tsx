@@ -14,34 +14,104 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: "Paper2Pytorch",
-    headline: "Research paper → running code",
-    metric: "~85%",
-    metricLabel: "zero-shot compilation",
+    name: "Paper2PyTorch",
+    headline: "Research papers → executable PyTorch code",
+    metric: "9 ★",
+    metricLabel: "GitHub Stars",
     description:
-      "A multi-agent system (Google ADK + Gemini 3 Pro) that reads ML papers and writes executable PyTorch notebooks — a 4-stage parse → design → codegen → auto-repair pipeline with SSE streaming and Colab integration.",
-    tech: ["Next.js 14", "FastAPI", "Google ADK", "Gemini 3 Pro", "SSE"],
+      "An advanced multi-agent compiler framework built with Google ADK and Gemini 3 Pro that parses complex machine learning research papers and outputs fully executable PyTorch Jupyter notebooks via a 4-stage self-repair loop.",
+    tech: ["Google ADK", "Gemini Pro", "FastAPI", "React", "SSE"],
     href: "https://github.com/hrushik98/Paper2PyTorch",
   },
   {
-    name: "SpeakThought",
-    headline: "Say it. It's a task now.",
-    metric: "98%",
-    metricLabel: "extraction accuracy",
+    name: "offline-telugu-asr-android",
+    headline: "Fully offline Telugu speech-to-text on Android",
+    metric: "0 ★",
+    metricLabel: "GitHub Stars",
     description:
-      "A voice-powered task manager: speak your thoughts, get structured to-dos and email reminders. Real-time DSP-driven voice visualization cut perceived latency by 40%.",
-    tech: ["Next.js", "Web Audio API", "Google Realtime API", "Google ADK"],
-    href: "https://github.com/hrushik98/speakthought",
+      "On-device automatic speech recognition and speaker diarization engine running entirely via ONNX Runtime on Android. Optimizes AI4Bharat IndicConformer and 3D-Speaker CAM++ models for low-latency live streaming with zero network reliance.",
+    tech: ["ONNX Runtime", "IndicConformer", "CAM++", "Android NDK", "C++"],
+    href: "https://github.com/hrushik98/offline-telugu-asr-android",
   },
   {
     name: "Whisper Mobile",
-    headline: "Speech-to-text with zero cloud",
-    metric: "<4s",
-    metricLabel: "for 30s clips, offline",
+    headline: "ASR speech engine with zero cloud dependency",
+    metric: "1 ★",
+    metricLabel: "GitHub Stars",
     description:
-      "A fully offline ASR engine for Android: a custom JNI bridge runs whisper.cpp C++ inference on ARM64 NEON. No network. No servers. Your voice never leaves the phone.",
-    tech: ["Kotlin", "Jetpack Compose", "Android NDK", "JNI", "whisper.cpp"],
+      "Fully offline Telugu/English ASR system for Android devices. Utilizes a custom JNI bridge running whisper.cpp C++ inference directly optimized for ARM64 NEON registers to transcribe 30s audio clips in under 4 seconds.",
+    tech: ["Android NDK", "whisper.cpp", "JNI", "Kotlin", "NEON"],
     href: "https://github.com/hrushik98/whisper-mobile",
+  },
+  {
+    name: "SpeakThought",
+    headline: "Voice-to-task agent & scheduler",
+    metric: "Local",
+    metricLabel: "Private Repo",
+    description:
+      "A real-time voice task assistant integrating the Google Realtime API to extract scheduled events and structured to-dos from spoken thoughts, backed by DSP voice visualization mapping that lowers perceived latency by 40%.",
+    tech: ["Next.js", "Web Audio API", "Google Realtime API", "DSP"],
+    href: "https://github.com/hrushik98/speakthought",
+  },
+  {
+    name: "Rocky LM",
+    headline: "Fine-tuning Gemma-2 to speak like Rocky",
+    metric: "3 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "End-to-end LLM fine-tuning pipeline using LoRA to train google/gemma-2-2b-it on custom fiction dialogue datasets, successfully recreating the unique vocabulary and speech patterns of Rocky from Project Hail Mary.",
+    tech: ["Gemma 2", "LoRA", "Fine-tuning", "Python", "Transformers"],
+    href: "https://github.com/hrushik98/rocky-lm",
+  },
+  {
+    name: "md2pdfgo",
+    headline: "Full-stack Markdown to print-ready PDF",
+    metric: "20 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "Full-stack document utility featuring a Go backend, a React/Vite frontend, and Docker containerization. Leverages wkhtmltopdf binaries inside Docker to render live print-ready PDF previews of raw Markdown input.",
+    tech: ["Go", "React", "Vite", "wkhtmltopdf", "Docker"],
+    href: "https://github.com/hrushik98/md2pdfgo",
+  },
+  {
+    name: "termodoro",
+    headline: "Minimal terminal Pomodoro app in Go",
+    metric: "19 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "Lightweight terminal-based Pomodoro focus timer CLI built in Go, implementing raw keyboard event loops, Unix audio alerts, and cross-platform terminal UI states.",
+    tech: ["Go", "Terminal CLI", "Unix Shell", "Timer Loops"],
+    href: "https://github.com/hrushik98/termodoro",
+  },
+  {
+    name: "bettrWrite",
+    headline: "AI-powered writing helper CLI",
+    metric: "14 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "Command-line writing assistant that automatically parses text files to correct typos, syntax anomalies, and grammatical issues using OpenAI's generative language endpoints.",
+    tech: ["Python", "Shell Script", "OpenAI API", "CLI"],
+    href: "https://github.com/hrushik98/bettrWrite",
+  },
+  {
+    name: "Arxiv-researcher",
+    headline: "Chat with Arxiv research papers",
+    metric: "5 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "A semantic RAG tool allowing developers to upload, index, and query academic publications from Arxiv via natural language, powered by vector databases and Node.js.",
+    tech: ["TypeScript", "Node.js", "Vector DB", "RAG", "Arxiv API"],
+    href: "https://github.com/hrushik98/Arxiv-researcher",
+  },
+  {
+    name: "FIN-AI",
+    headline: "AI stock analysis and summary assistant",
+    metric: "4 ★",
+    metricLabel: "GitHub Stars",
+    description:
+      "AI-driven investment helper that extracts market metrics, reads stock profiles, and delivers detailed performance summarizations of equities using financial APIs.",
+    tech: ["Python", "Yahoo Finance API", "LLM API", "Data Extract"],
+    href: "https://github.com/hrushik98/FIN-AI",
   },
 ]
 
@@ -57,7 +127,7 @@ export function Projects() {
 
       <div className="mt-14 space-y-6">
         {projects.map((p, i) => (
-          <Reveal key={p.name} delay={i * 90}>
+          <Reveal key={p.name} delay={i * 70}>
             <a
               href={p.href}
               target="_blank"
