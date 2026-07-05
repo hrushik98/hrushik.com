@@ -9,7 +9,7 @@ export function Hero() {
         <h1 className="display text-[clamp(2.5rem,8.5vw,6rem)] text-ink leading-[1.05] font-extrabold tracking-tight">
           AI systems
           <br />
-          that <span className="brut-mark bg-brut-yellow text-ink rotate-[-1deg] my-2">actually ship.</span>
+          that <span className="brut-mark bg-brut-yellow text-ink rotate-[-1deg] my-2">actually ship!</span>
         </h1>
 
         <p className="mt-7 max-w-xl text-[1.05rem] font-semibold leading-relaxed text-ink/90">
