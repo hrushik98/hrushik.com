@@ -271,3 +271,67 @@
     animation: none !important;
   }
 }
+
+/* ---------- Blog prose (neobrutalist markdown) ---------- */
+
+.blog-prose {
+  overflow-wrap: break-word;
+}
+
+.blog-prose > *:first-child {
+  margin-top: 0;
+}
+
+.blog-prose ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding-left: 0.25rem;
+}
+
+.blog-prose ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.blog-prose ol::marker,
+.blog-prose ol > li::marker {
+  font-family: var(--font-mono-stack);
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.blog-prose li {
+  margin: 0.4rem 0;
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--ink) 90%, transparent);
+}
+
+.blog-prose ul > li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.blog-prose ul > li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.blog-prose li > ul,
+.blog-prose li > ol {
+  margin: 0.4rem 0 0.2rem;
+}
+
+.blog-prose li > p {
+  margin: 0.2rem 0;
+}
+
+.blog-prose :not(pre) > code {
+  overflow-wrap: anywhere;
+}

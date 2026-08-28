@@ -5,7 +5,7 @@ export function Contact() {
     <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
       <div className="relative mx-auto max-w-6xl px-5 text-center">
         <Reveal>
-          <p className="kicker text-ink">05 / Contact</p>
+          <p className="kicker text-ink">06 / Contact</p>
           <h2 className="display mx-auto mt-4 max-w-3xl text-[clamp(2.2rem,6.5vw,4.6rem)] text-ink leading-[1.1] font-extrabold">
             Have a hard problem?
             <br />

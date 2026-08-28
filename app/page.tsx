@@ -5,6 +5,7 @@ import { Experience } from "@/components/lab/experience"
 import { Projects } from "@/components/lab/projects"
 import { Skills } from "@/components/lab/skills"
 import { Credentials } from "@/components/lab/credentials"
+import { Blog } from "@/components/lab/blog"
 import { Contact } from "@/components/lab/contact"
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Credentials />
+      <Blog />
       <Contact />
 
       <footer className="border-t-[3px] border-ink bg-white py-8 text-center font-mono text-[0.75rem] font-bold text-ink leading-loose">
