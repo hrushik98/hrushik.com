@@ -22,9 +22,9 @@ const CONTENT_DIR = join(process.cwd(), "content", "blog")
 const posts: BlogMeta[] = [
   {
     slug: "vibecode-like-a-pro",
-    title: "Vibecoding Like a Pro: Idea to Production in 2026",
+    title: "No BS guide to code with AI in 2026",
     summary:
-      "A field guide distilled from 89 YouTube talks, 8 long-form articles, 5 frontier-LLM writeups, and the gstack / mattpocock / superpowers playbooks. The 4 stages, the skills that matter, how to test, how to read an unfamiliar codebase, and a 20-step runbook from idea to production.",
+      "A field guide distilled from 100+ YouTube talks, long-form articles, and discussion forums on going from idea to prototype to production with AI in 2026: the stages, the skills that matter, when to write tests, how to work inside an unfamiliar codebase, and a full idea-to-ship runbook.",
     date: "2026-08-29",
     displayDate: "Aug 29, 2026",
     tags: ["AI Engineering", "Vibe Coding", "Claude Code", "Testing", "Playbook"],
