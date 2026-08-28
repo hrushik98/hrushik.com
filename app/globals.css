@@ -136,10 +136,14 @@
   box-shadow: 0 0 0 0 var(--ink);
 }
 
-.brut-chip {
-  border: 2px solid var(--ink);
-  box-shadow: 3px 3px 0 0 var(--ink);
-  background: var(--white);
+/* In @layer so the bg-brut-* utility passed alongside it wins; falls back to
+   paper white when no accent colour is supplied. */
+@layer components {
+  .brut-chip {
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 0 var(--ink);
+    background: var(--white);
+  }
 }
 
 /* Highlighted word inside headlines */
