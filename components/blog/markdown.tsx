@@ -1,6 +1,8 @@
 import type { ReactNode } from "react"
+import type { Element } from "hast"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import { Mermaid } from "./mermaid"
 
 function textOf(node: ReactNode): string {
   if (typeof node === "string" || typeof node === "number") return String(node)
@@ -10,6 +12,14 @@ function textOf(node: ReactNode): string {
     return textOf(props?.children)
   }
   return ""
+}
+
+// True when a hast <pre> wraps a ```mermaid fenced block.
+function isMermaidPre(node: Element | undefined): boolean {
+  const code = node?.children?.[0]
+  if (!code || code.type !== "element" || code.tagName !== "code") return false
+  const className = code.properties?.className
+  return Array.isArray(className) && className.includes("language-mermaid")
 }
 
 export function Markdown({ content }: { content: string }) {
@@ -60,6 +70,9 @@ export function Markdown({ content }: { content: string }) {
           li: ({ children }) => <li className="leading-[1.7] pl-1">{children}</li>,
           code: ({ children, className }: { children?: ReactNode; className?: string }) => {
             const raw = textOf(children)
+            if (/language-mermaid/.test(className ?? "")) {
+              return <Mermaid chart={raw} />
+            }
             const isBlock = /language-/.test(className ?? "") || raw.includes("\n")
             if (isBlock) {
               return (
@@ -74,11 +87,18 @@ export function Markdown({ content }: { content: string }) {
               </code>
             )
           },
-          pre: ({ children }) => (
-            <pre className="my-5 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-              {children}
-            </pre>
-          ),
+          pre: ({ children, node }) => {
+            // Mermaid renders its own <figure>; keep that block-level element out
+            // of an invalid <pre> nesting by returning the child unwrapped.
+            if (isMermaidPre(node as Element | undefined)) {
+              return <>{children}</>
+            }
+            return (
+              <pre className="my-5 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+                {children}
+              </pre>
+            )
+          },
           table: ({ children }) => (
             <div className="my-5 overflow-x-auto rounded-lg border border-neutral-200">
               <table className="w-full border-collapse text-left text-[14px]">{children}</table>
