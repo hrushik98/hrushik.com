@@ -14,99 +14,91 @@ function textOf(node: ReactNode): string {
 
 export function Markdown({ content }: { content: string }) {
   return (
-    <div className="blog-prose">
+    <div className="text-neutral-700">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
-            <h1 className="display mt-14 mb-5 text-[clamp(1.9rem,4vw,2.7rem)] font-extrabold leading-tight text-ink">
-              {children}
-            </h1>
+            <h1 className="mt-10 mb-3 text-lg font-semibold text-neutral-900">{children}</h1>
           ),
           h2: ({ children }) => (
-            <h2 className="display mt-16 mb-5 border-b-[3px] border-ink pb-2 text-[clamp(1.5rem,3.4vw,2.1rem)] font-extrabold uppercase leading-tight text-ink">
-              {children}
-            </h2>
+            <h2 className="mt-9 mb-2 text-[15px] font-semibold text-neutral-900">{children}</h2>
           ),
           h3: ({ children }) => (
-            <h3 className="display mt-10 mb-3 flex items-baseline gap-2 text-[clamp(1.15rem,2.4vw,1.5rem)] font-bold leading-snug text-ink">
-              <span aria-hidden className="text-brut-pink">
-                ▹
-              </span>
-              <span>{children}</span>
-            </h3>
+            <h3 className="mt-6 mb-2 text-[15px] font-medium text-neutral-900">{children}</h3>
           ),
           h4: ({ children }) => (
-            <h4 className="mt-8 mb-2 font-mono text-[0.8rem] font-bold uppercase tracking-[0.18em] text-ink/70">
-              {children}
-            </h4>
+            <h4 className="mt-5 mb-1 text-[13px] font-semibold text-neutral-400">{children}</h4>
           ),
-          p: ({ children }) => (
-            <p className="my-4 text-[0.98rem] font-medium leading-[1.75] text-ink/90">{children}</p>
-          ),
+          p: ({ children }) => <p className="my-4 leading-[1.75]">{children}</p>,
           a: ({ href, children }) => {
             const external = !!href && /^https?:\/\//.test(href)
             return (
               <a
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="font-semibold text-ink underline decoration-brut-blue decoration-[2px] underline-offset-2 hover:decoration-brut-pink"
+                className="link text-neutral-900"
               >
                 {children}
               </a>
             )
           },
-          strong: ({ children }) => <strong className="font-extrabold text-ink">{children}</strong>,
-          em: ({ children }) => <em className="italic text-ink/80">{children}</em>,
-          hr: () => <hr className="my-12 border-0 border-t-[3px] border-dashed border-ink/60" />,
+          strong: ({ children }) => <strong className="font-semibold text-neutral-900">{children}</strong>,
+          em: ({ children }) => <em className="italic">{children}</em>,
+          hr: () => <hr className="my-10 border-neutral-100" />,
           blockquote: ({ children }) => (
-            <blockquote className="my-6 border-l-[6px] border-brut-purple bg-white px-5 py-1 shadow-[4px_4px_0_0_var(--ink)]">
+            <blockquote className="my-5 border-l-2 border-neutral-200 pl-4 text-neutral-500">
               {children}
             </blockquote>
           ),
+          ul: ({ children }) => (
+            <ul className="my-4 list-disc space-y-1.5 pl-5 marker:text-neutral-300">{children}</ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="my-4 list-decimal space-y-1.5 pl-5 marker:text-neutral-400">{children}</ol>
+          ),
+          li: ({ children }) => <li className="leading-[1.7] pl-1">{children}</li>,
           code: ({ children, className }: { children?: ReactNode; className?: string }) => {
             const raw = textOf(children)
             const isBlock = /language-/.test(className ?? "") || raw.includes("\n")
             if (isBlock) {
               return (
-                <code className={`${className ?? ""} font-mono text-[0.82rem] leading-relaxed`}>{children}</code>
+                <code className={`${className ?? ""} font-mono text-[13px] leading-relaxed text-neutral-800`}>
+                  {children}
+                </code>
               )
             }
             return (
-              <code className="rounded-[2px] border-2 border-ink bg-brut-yellow/50 px-1.5 py-[1px] font-mono text-[0.85em] font-semibold text-ink">
+              <code className="rounded bg-neutral-100 px-1 py-0.5 font-mono text-[0.85em] text-neutral-800">
                 {children}
               </code>
             )
           },
           pre: ({ children }) => (
-            <pre className="my-6 overflow-x-auto border-[3px] border-ink bg-ink p-4 text-cream shadow-[6px_6px_0_0_var(--ink)]">
+            <pre className="my-5 overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 p-4">
               {children}
             </pre>
           ),
           table: ({ children }) => (
-            <div className="my-6 overflow-x-auto border-[3px] border-ink shadow-[6px_6px_0_0_var(--ink)]">
-              <table className="w-full border-collapse text-left">{children}</table>
+            <div className="my-5 overflow-x-auto rounded-lg border border-neutral-200">
+              <table className="w-full border-collapse text-left text-[14px]">{children}</table>
             </div>
           ),
-          thead: ({ children }) => <thead className="bg-brut-yellow">{children}</thead>,
+          thead: ({ children }) => <thead className="bg-neutral-50">{children}</thead>,
           th: ({ children }) => (
-            <th className="border-2 border-ink px-3 py-2 font-mono text-[0.75rem] font-bold uppercase tracking-wide text-ink">
+            <th className="border-b border-neutral-200 px-3 py-2 font-medium text-neutral-900">
               {children}
             </th>
           ),
           td: ({ children }) => (
-            <td className="border-2 border-ink bg-white px-3 py-2 align-top text-[0.86rem] font-medium leading-relaxed text-ink/90">
+            <td className="border-b border-neutral-100 px-3 py-2 align-top text-neutral-600">
               {children}
             </td>
           ),
           img: ({ src, alt }) =>
             typeof src === "string" ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={src}
-                alt={alt ?? ""}
-                className="my-6 w-full border-[3px] border-ink shadow-[6px_6px_0_0_var(--ink)]"
-              />
+              <img src={src} alt={alt ?? ""} className="my-5 w-full rounded-lg border border-neutral-200" />
             ) : null,
         }}
       >
