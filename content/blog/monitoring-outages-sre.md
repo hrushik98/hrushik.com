@@ -192,21 +192,17 @@ An alert firing end to end:
 
 ```mermaid
 sequenceDiagram
-    autonumber
     participant P as Probe
     participant C as Collector
     participant A as Alerting
-    participant D as Pager
     participant E as On-call
-    P->>C: synthetic check failed 3x over 90s
-    C->>A: error-rate SLI past fast-burn threshold
-    A->>D: fire alert, severity 1
-    D->>E: phone, Slack, push
+    P->>C: synthetic check fails 3x over 90s
+    C->>A: error-rate SLI past burn-rate threshold
+    A->>E: page, severity 1
     E->>A: acknowledge
     E->>E: open runbook, roll back deploy
-    C->>A: SLI recovered
-    A->>D: auto-resolve
-    D-->>E: recovery notification
+    C->>A: SLI recovers
+    A-->>E: auto-resolve, recovery confirmed
 ```
 
 Checklist:
@@ -238,15 +234,14 @@ Communicate outward on a status page that is not hosted on your own infrastructu
 The incident lifecycle:
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Healthy
-    Healthy --> Detected: SLI breaches threshold
-    Detected --> Acknowledged: on-call responds
-    Acknowledged --> Mitigated: roll back, fail over, shed load
-    Mitigated --> Resolved: root cause removed
-    Resolved --> Healthy: monitoring confirms recovery
-    Resolved --> Postmortem: severity 1 or 2
-    Postmortem --> Healthy: action items tracked
+flowchart TD
+    H["Healthy"] --> D["Detected - SLI past threshold"]
+    D --> A["Acknowledged - on-call responds"]
+    A --> M["Mitigated - roll back, fail over, shed load"]
+    M --> R["Resolved - root cause removed"]
+    R -->|"monitoring confirms recovery"| H
+    R -->|"severity 1 or 2"| P["Postmortem - action items tracked"]
+    P --> H
 ```
 
 Checklist:
