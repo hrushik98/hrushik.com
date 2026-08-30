@@ -53,11 +53,11 @@ You have 45 minutes and very little time to think.
 Spend the minutes where the marks are.
 
 ```mermaid
-flowchart LR
-    A["Clarify<br/>5 min<br/>users, latency,<br/>domain, risk, budget"] --> B["Envelope math<br/>5 min<br/>QPS, tokens,<br/>cost, latency"]
-    B --> C["High-level design<br/>15 min<br/>components and<br/>data flow"]
-    C --> D["Deep dive<br/>15 min<br/>retrieval, routing,<br/>agent limits"]
-    D --> E["Wrap<br/>5 min<br/>edge cases,<br/>follow-ups"]
+flowchart TD
+    A["Clarify, 5 min<br/>users, latency, domain, risk, budget"] --> B["Envelope math, 5 min<br/>QPS, tokens, cost, latency"]
+    B --> C["High-level design, 15 min<br/>components and data flow"]
+    C --> D["Deep dive, 15 min<br/>retrieval, routing, agent limits"]
+    D --> E["Wrap, 5 min<br/>edge cases, follow-ups"]
 ```
 
 The first 10 minutes look cheap and are not.
@@ -293,7 +293,7 @@ An agent is a loop with a goal.
 Think, act, observe, check the goal; if not done, loop again.
 
 ```mermaid
-flowchart LR
+flowchart TD
     T["Think<br/>analyze the goal"] --> A["Act<br/>call a tool"]
     A --> O["Observe<br/>read the result"]
     O --> D{"Goal met?"}
