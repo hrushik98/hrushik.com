@@ -1,12 +1,26 @@
 import Image from "next/image"
 import profilePic from "@/public/profile.jpeg"
-import { CursorIcon, GithubIcon, LeetcodeIcon, LinkedinIcon, MailIcon } from "./icons"
+import {
+  CursorIcon,
+  GithubIcon,
+  LeetcodeIcon,
+  LinkedinIcon,
+  MailIcon,
+  ResumeIcon,
+  XIcon,
+} from "./icons"
 
 const socials = [
   { label: "GitHub", href: "https://github.com/hrushik98", Icon: GithubIcon },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/hrushik/", Icon: LinkedinIcon },
+  { label: "X", href: "https://x.com/hrushik04", Icon: XIcon },
   { label: "LeetCode", href: "https://leetcode.com/phanihrushik/", Icon: LeetcodeIcon },
   { label: "Email", href: "mailto:phanihrushik.10@gmail.com", Icon: MailIcon },
+  {
+    label: "Resume",
+    href: "https://drive.google.com/file/d/1SDW5B8xtovppSjxfhiLx2TSNgES2NGcK/view?usp=sharing",
+    Icon: ResumeIcon,
+  },
 ]
 
 export function ProfileHeader() {
